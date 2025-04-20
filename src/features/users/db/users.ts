@@ -1,6 +1,7 @@
 import { db } from "@/drizzle/db";
 import { UserTable } from "@/drizzle/schema";
 import { eq } from "drizzle-orm";
+import { revalidateUserCache } from "./cache";
 
 export async function insertUser(data: typeof UserTable.$inferInsert) {
   const [newUser] = await db
@@ -12,9 +13,10 @@ export async function insertUser(data: typeof UserTable.$inferInsert) {
       set: data,
     });
   if (!newUser) throw new Error("Failed to insert User");
+  revalidateUserCache(newUser.id);
   return newUser;
 }
-export async function updataUser(
+export async function updatedUser(
   { clerkUserId }: { clerkUserId: string },
   data: Partial<typeof UserTable.$inferInsert>
 ) {
@@ -24,9 +26,11 @@ export async function updataUser(
     .where(eq(UserTable.clerkUserId, clerkUserId))
     .returning();
   if (!updatedUser) throw new Error("Failed to update User");
+  revalidateUserCache(updatedUser.id);
+
   return updatedUser;
 }
-export async function deleteUser({ clerkUserId }: { clerkUserId: string }) {
+export async function deletedUser({ clerkUserId }: { clerkUserId: string }) {
   const [deletedUser] = await db
     .update(UserTable)
     .set({
@@ -39,5 +43,7 @@ export async function deleteUser({ clerkUserId }: { clerkUserId: string }) {
     .where(eq(UserTable.clerkUserId, clerkUserId))
     .returning();
   if (!deletedUser) throw new Error("Failed to delete User");
+  revalidateUserCache(deletedUser.id);
+
   return deletedUser;
 }

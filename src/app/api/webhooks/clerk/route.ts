@@ -1,5 +1,9 @@
 import { env } from "@/config/env/server";
-import { deleteUser, insertUser, updataUser } from "@/features/users/db/users";
+import {
+  deletedUser,
+  insertUser,
+  updatedUser,
+} from "@/features/users/db/users";
 import { syncClerkUserMetadata } from "@/services/clerk";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
@@ -57,7 +61,7 @@ export async function POST(req: Request) {
 
         await syncClerkUserMetadata(user);
       } else {
-        await updataUser(
+        await updatedUser(
           { clerkUserId: event.data.id },
           {
             email,
@@ -71,7 +75,7 @@ export async function POST(req: Request) {
     }
     case "user.deleted": {
       if (event.data.id != null) {
-        await deleteUser({ clerkUserId: event.data.id });
+        await deletedUser({ clerkUserId: event.data.id });
       }
       break;
     }
