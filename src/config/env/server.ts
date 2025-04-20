@@ -7,6 +7,7 @@ export const env = createEnv({
     DB_USER: z.string().min(1),
     DB_PASSWORD: z.string().min(1),
     CLERK_SECRET_KEY: z.string().min(1),
+    CLERK_WEBHOOKS_EKY: z.string().min(1),
   },
   experimental__runtimeEnv: process.env,
 });

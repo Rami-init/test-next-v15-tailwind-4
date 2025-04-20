@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { canAccessAdminPages } from "@/permissions/general";
+import { getCurrentUser } from "@/services/clerk";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React, { Suspense } from "react";
@@ -22,25 +24,20 @@ export const NavBar = () => {
           Course Store
         </Link>
         <Suspense>
-          <Link
-            href="/admin"
-            className="hover:bg-accent/10 flex items-center px-2"
-          >
-            Admin
-          </Link>
-          <Link
-            href="/courses"
-            className="hover:bg-accent/10 flex items-center px-2"
-          >
-            My Courses
-          </Link>
-          <Link
-            href="/purchases"
-            className="hover:bg-accent/10 flex items-center px-2"
-          >
-            Purchase History
-          </Link>
           <SignedIn>
+            <AdminLink />
+            <Link
+              href="/courses"
+              className="hover:bg-accent/10 flex items-center px-2"
+            >
+              My Courses
+            </Link>
+            <Link
+              href="/purchases"
+              className="hover:bg-accent/10 flex items-center px-2"
+            >
+              Purchase History
+            </Link>
             <div className="size-8 self-center">
               <UserButton
                 appearance={{
@@ -57,7 +54,7 @@ export const NavBar = () => {
 
         <Suspense>
           <SignedOut>
-            <Button className="size-8 self-center" asChild>
+            <Button className="self-center" asChild>
               <SignInButton />
             </Button>
           </SignedOut>
@@ -66,3 +63,12 @@ export const NavBar = () => {
     </header>
   );
 };
+async function AdminLink() {
+  const user = await getCurrentUser();
+  if (!canAccessAdminPages(user)) return null;
+  return (
+    <Link href="/admin" className="hover:bg-accent/10 flex items-center px-2">
+      Admin
+    </Link>
+  );
+}
