@@ -16,10 +16,10 @@ export default function ({ children }: { children: React.ReactNode }) {
 export const NavBar = () => {
   return (
     <header className="flex h-12 shadow bg-secondary-foreground z-10 max-w-screen">
-      <nav className="flex gap-4 mx-auto container font-semibold text-gray-700">
+      <nav className="flex gap-4 mx-auto container font-semibold text-primary">
         <Link
           href="/"
-          className="mr-auto text-lg  hover:underline px-2 flex items-center text-secondary"
+          className="mr-auto text-lg hover:underline flex items-center"
         >
           Course Store
         </Link>

@@ -15,6 +15,12 @@ importers:
       '@clerk/nextjs':
         specifier: ^6.15.1
         version: 6.15.1(next@15.3.1-canary.11(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415))(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415)(svix@1.64.1)
+      '@hookform/resolvers':
+        specifier: ^5.0.1
+        version: 5.0.1(react-hook-form@7.56.0(react@19.2.0-canary-b04254fd-20250415))
+      '@radix-ui/react-label':
+        specifier: ^2.1.4
+        version: 2.1.4(@types/react-dom@19.1.2(@types/react@19.1.1))(@types/react@19.1.1)(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415)
       '@radix-ui/react-slot':
         specifier: ^1.2.0
         version: 1.2.0(@types/react@19.1.1)(react@19.2.0-canary-b04254fd-20250415)
@@ -36,6 +42,9 @@ importers:
       next:
         specifier: 15.3.1-canary.11
         version: 15.3.1-canary.11(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415)
+      next-themes:
+        specifier: ^0.4.6
+        version: 0.4.6(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415)
       pg:
         specifier: ^8.14.1
         version: 8.14.1
@@ -45,6 +54,12 @@ importers:
       react-dom:
         specifier: 19.2.0-canary-b04254fd-20250415
         version: 19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415)
+      react-hook-form:
+        specifier: ^7.56.0
+        version: 7.56.0(react@19.2.0-canary-b04254fd-20250415)
+      sonner:
+        specifier: ^2.0.3
+        version: 2.0.3(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415)
       svix:
         specifier: ^1.64.1
         version: 1.64.1
@@ -467,6 +482,11 @@ packages:
     resolution: {integrity: sha512-ZAoA40rNMPwSm+AeHpCq8STiNAwzWLJuP8Xv4CHIc9wv/PSuExjMrmjfYNj682vW0OOiZ1HKxzvjQr9XZIisQA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@hookform/resolvers@5.0.1':
+    resolution: {integrity: sha512-u/+Jp83luQNx9AdyW2fIPGY6Y7NG68eN2ZW8FOJYL+M0i4s49+refdJdOp/A9n9HFQtQs3HIDHQvX3ZET2o7YA==}
+    peerDependencies:
+      react-hook-form: ^7.55.0
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -682,6 +702,32 @@ packages:
       '@types/react':
         optional: true
 
+  '@radix-ui/react-label@2.1.4':
+    resolution: {integrity: sha512-wy3dqizZnZVV4ja0FNnUhIWNwWdoldXrneEyUcVtLYDAt8ovGS4ridtMAOGgXBBIfggL4BOveVWsjXDORdGEQg==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
+  '@radix-ui/react-primitive@2.1.0':
+    resolution: {integrity: sha512-/J/FhLdK0zVcILOwt5g+dH4KnkonCtkVJsa2G6JmvbbtZfBEI1gMsO3QMjseL4F/SwfAMt1Vc/0XKYKq+xJ1sw==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
   '@radix-ui/react-slot@1.2.0':
     resolution: {integrity: sha512-ujc+V6r0HNDviYqIK3rW4ffgYiZ8g5DEHrGJVk4x7kTlLXRDILnKX9vAUYeIsLOoDpDJ0ujpqMkjH4w2ofuo6w==}
     peerDependencies:
@@ -699,6 +745,9 @@ packages:
 
   '@stablelib/base64@1.0.1':
     resolution: {integrity: sha512-1bnPQqSxSuc3Ii6MhBysoWCg58j97aUjuCSZrGSmDxNqtytIi0k8utUenAwTZN4V5mXXYGsVUI9zeBqy+jBOSQ==}
+
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
 
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
@@ -1893,6 +1942,12 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+  next-themes@0.4.6:
+    resolution: {integrity: sha512-pZvgD5L0IEvX5/9GWyHMf3m8BKiVQwsCMHfoFosXtXBMnaS0ZnIJ9ST4b4NqLVKDEm8QBxoNNGNaBv2JNF6XNA==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+
   next@15.3.1-canary.11:
     resolution: {integrity: sha512-A9o9Fk4dZwxE8eSw6yw9SGChmI3sDDkx9CsoGJxJLF5oJJqoyoHZddd8w2w8hUMa0usNnIGWvY22/JnNbyFPig==}
     engines: {node: ^18.18.0 || ^19.8.0 || >= 20.0.0}
@@ -2084,6 +2139,12 @@ packages:
     peerDependencies:
       react: 19.2.0-canary-b04254fd-20250415
 
+  react-hook-form@7.56.0:
+    resolution: {integrity: sha512-U2QQgx5z2Y8Z0qlXv3W19hWHJgfKdWMz0O/osuY+o+CYq568V2R/JhzC6OAXfR8k24rIN0Muan2Qliaq9eKs/g==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -2205,6 +2266,12 @@ packages:
   snakecase-keys@8.0.1:
     resolution: {integrity: sha512-Sj51kE1zC7zh6TDlNNz0/Jn1n5HiHdoQErxO8jLtnyrkJW/M5PrI7x05uDgY3BO7OUQYKCvmeMurW6BPUdwEOw==}
     engines: {node: '>=18'}
+
+  sonner@2.0.3:
+    resolution: {integrity: sha512-njQ4Hht92m0sMqqHVDL32V2Oun9W1+PHO9NDv9FHfJjT3JT22IG4Jpo3FPQy+mouRKCXFWO+r67v6MrHX2zeIA==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -2699,6 +2766,11 @@ snapshots:
       '@eslint/core': 0.13.0
       levn: 0.4.1
 
+  '@hookform/resolvers@5.0.1(react-hook-form@7.56.0(react@19.2.0-canary-b04254fd-20250415))':
+    dependencies:
+      '@standard-schema/utils': 0.3.0
+      react-hook-form: 7.56.0(react@19.2.0-canary-b04254fd-20250415)
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -2849,6 +2921,24 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.1.1
 
+  '@radix-ui/react-label@2.1.4(@types/react-dom@19.1.2(@types/react@19.1.1))(@types/react@19.1.1)(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415)':
+    dependencies:
+      '@radix-ui/react-primitive': 2.1.0(@types/react-dom@19.1.2(@types/react@19.1.1))(@types/react@19.1.1)(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415)
+      react: 19.2.0-canary-b04254fd-20250415
+      react-dom: 19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415)
+    optionalDependencies:
+      '@types/react': 19.1.1
+      '@types/react-dom': 19.1.2(@types/react@19.1.1)
+
+  '@radix-ui/react-primitive@2.1.0(@types/react-dom@19.1.2(@types/react@19.1.1))(@types/react@19.1.1)(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415)':
+    dependencies:
+      '@radix-ui/react-slot': 1.2.0(@types/react@19.1.1)(react@19.2.0-canary-b04254fd-20250415)
+      react: 19.2.0-canary-b04254fd-20250415
+      react-dom: 19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415)
+    optionalDependencies:
+      '@types/react': 19.1.1
+      '@types/react-dom': 19.1.2(@types/react@19.1.1)
+
   '@radix-ui/react-slot@1.2.0(@types/react@19.1.1)(react@19.2.0-canary-b04254fd-20250415)':
     dependencies:
       '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.1.1)(react@19.2.0-canary-b04254fd-20250415)
@@ -2861,6 +2951,8 @@ snapshots:
   '@rushstack/eslint-patch@1.11.0': {}
 
   '@stablelib/base64@1.0.1': {}
+
+  '@standard-schema/utils@0.3.0': {}
 
   '@swc/counter@0.1.3': {}
 
@@ -4148,6 +4240,11 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
+  next-themes@0.4.6(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415):
+    dependencies:
+      react: 19.2.0-canary-b04254fd-20250415
+      react-dom: 19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415)
+
   next@15.3.1-canary.11(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415):
     dependencies:
       '@next/env': 15.3.1-canary.11
@@ -4341,6 +4438,10 @@ snapshots:
       react: 19.2.0-canary-b04254fd-20250415
       scheduler: 0.27.0-canary-b04254fd-20250415
 
+  react-hook-form@7.56.0(react@19.2.0-canary-b04254fd-20250415):
+    dependencies:
+      react: 19.2.0-canary-b04254fd-20250415
+
   react-is@16.13.1: {}
 
   react@19.2.0-canary-b04254fd-20250415: {}
@@ -4517,6 +4618,11 @@ snapshots:
       map-obj: 4.3.0
       snake-case: 3.0.4
       type-fest: 4.40.0
+
+  sonner@2.0.3(react-dom@19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415))(react@19.2.0-canary-b04254fd-20250415):
+    dependencies:
+      react: 19.2.0-canary-b04254fd-20250415
+      react-dom: 19.2.0-canary-b04254fd-20250415(react@19.2.0-canary-b04254fd-20250415)
 
   source-map-js@1.2.1: {}
 
